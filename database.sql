@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS invite_db
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE invite_db;
+
+CREATE TABLE invitations (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    invite_code VARCHAR(32) NOT NULL UNIQUE,
+    title VARCHAR(255) NOT NULL DEFAULT 'یه قرار خاص',
+    accepted TINYINT(1) NULL DEFAULT NULL,
+    food VARCHAR(100) NULL,
+    invite_date DATE NULL,
+    invite_time TIME NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE responses (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    invitation_id INT UNSIGNED NOT NULL,
+    step VARCHAR(50) NOT NULL,
+    answer VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_responses_invitation
+      FOREIGN KEY (invitation_id) REFERENCES invitations(id)
+      ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
