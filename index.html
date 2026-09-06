@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>یه دعوت خاص 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- نوار پیشرفت -->
+        <div class="progress">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+
+        <!-- مرحله اول -->
+        <section id="step1" class="card step active">
+
+            <div class="emoji">🥺</div>
+
+            <h1>
+                با من میای سر قرار؟
+            </h1>
+
+            <p>
+                فقط یه سؤال ساده‌ست...
+                <br>
+                جواب درست هم فقط یکیه 😏
+            </p>
+
+            <div class="actions">
+
+                <button id="yesBtn" class="primary">
+                    آره 💕
+                </button>
+
+                <button id="noBtn" class="secondary">
+                    نه
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- مرحله دوم -->
+        <section id="step2" class="card step">
+
+            <div class="emoji">🎉</div>
+
+            <h1>
+                خوشحالم نگفتی نه!
+            </h1>
+
+            <p>
+                پس بریم برای یه قرار قشنگ
+                <br>
+                و یه خاطره‌ی خوب 💗
+            </p>
+
+            <button class="primary next">
+                بزن بریم ✨
+            </button>
+
+        </section>
+
+
+        <!-- مرحله سوم -->
+        <section id="step3" class="card step">
+
+            <div class="emoji">🍽️</div>
+
+            <h1>
+                چی سفارش میدی؟
+            </h1>
+
+            <p>
+                یه چیز خوشمزه انتخاب کن
+                <br>
+                که مهمون من باشی 😋
+            </p>
+
+            <div class="choices">
+
+                <button class="choice" data-food="پیتزا">
+                    🍕
+                    <span>پیتزا</span>
+                </button>
+
+                <button class="choice" data-food="قهوه">
+                    ☕
+                    <span>قهوه</span>
+                </button>
+
+                <button class="choice" data-food="کباب">
+                    🍢
+                    <span>کباب</span>
+                </button>
+
+                <button class="choice" data-food="پاستا">
+                    🍝
+                    <span>پاستا</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- مرحله چهارم -->
+        <section id="step4" class="card step">
+
+            <div class="emoji">📅</div>
+
+            <h1>
+                کی وقت داری؟
+            </h1>
+
+            <p>
+                یه تاریخ و ساعت خوب
+                <br>
+                برام انتخاب کن 💕
+            </p>
+
+
+            <label for="dateInput">
+                تاریخ
+            </label>
+
+            <input
+                id="dateInput"
+                type="date"
+            >
+
+
+            <label for="timeInput">
+                ساعت
+            </label>
+
+            <input
+                id="timeInput"
+                type="time"
+            >
+
+
+            <button id="finishBtn" class="primary">
+                تأیید 💗
+            </button>
+
+        </section>
+
+
+        <!-- صفحه نهایی -->
+        <section id="final" class="card step">
+
+            <div class="emoji">💌</div>
+
+            <h1>
+                قرارمون ثبت شد!
+            </h1>
+
+            <p id="finalText">
+                پس قرارمون ثبت شد!
+                <br>
+                منتظرت می‌مونم 😍
+            </p>
+
+
+            <div class="summary">
+
+                <div>
+                    🍽️
+                    <b id="finalFood">-</b>
+                </div>
+
+                <div>
+                    📅
+                    <b id="finalDate">-</b>
+                </div>
+
+                <div>
+                    ⏰
+                    <b id="finalTime">-</b>
+                </div>
+
+            </div>
+
+
+            <button
+                class="secondary"
+                onclick="location.reload()"
+            >
+                دوباره ببینیم؟ 💕
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- پیام کوچک -->
+    <div id="toast"></div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
